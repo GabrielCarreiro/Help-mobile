@@ -21,7 +21,7 @@
 <strong> Passo 2 > </strong> <i> Outra ferramenta necessária que vamos utilizar é o <strong> Node.Js </strong>. <a href="https://nodejs.org/en/"> Clique aqui </a></i><br>
 <strong> Passo 3 > </strong> <i> Após a instalação das ferramentas você deve abrir o terminal do seu computador. </i><br>
 <strong> Passo 4 > </strong> <i> Altere o diretório de trabalho atual para o local em que deseja salvar. (exemplo: cd desktop). </i><br>
-<strong> Passo 5 > </strong> <i> Faça um clone desse repositório rodando: `git clone https://github.com/GabrielCarreiro/help-mobile` </i><br>
+<strong> Passo 5 > </strong> <i> Faça um clone desse repositório rodando: `git clone https://github.com/GabrielCarreiro/Help-mobile` </i><br>
 <strong> Passo 6 > </strong> <i> Depois de clonar o repositório entre na pasta rodando pelo terminal: `cd help-mobile` </i><br>
 <strong> Passo 7 > </strong> <i> Digite `npm i` para instalar as dependências do projeto e aguarde. </i><br>
 <strong> Passo 8 > </strong> <i> Digite `expo start` para iniciar o servidor de desenvolvimento e aguarde a execução.</i><br>
@@ -41,4 +41,4 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para
 <a href="https://github.com/KARLA-DINIZ"> Karla Diniz </a> |
 <a href="https://github.com/Neidamazio">Nei Damazio</a> |
 <a href="https://github.com/elviamasiero"> Elvia Goulart </a> |
-<a href="https://github.com/nath-cj"> Natália Carvalho </a> 
+<a href="https://github.com/nath-cj"> Nathália Carvalho </a> 
