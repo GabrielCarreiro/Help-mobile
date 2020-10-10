@@ -1,0 +1,107 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Bruno",
+      "email": "bruno@help.me",
+      "password": "123123"
+    },
+    {
+      "id": 2,
+      "nome": "Elvia",
+      "email": "elvia@help.me",
+      "password": "123123"
+    },
+    {
+      "id": 3,
+      "nome": "Gabriel",
+      "email": "gabriel@help.me",
+      "password": "123123"
+    },
+    {
+      "id": 4,
+      "nome": "Nei",
+      "email": "nei@help.me",
+      "password": "123123"
+    },
+    {
+      "id": 5,
+      "nome": "Karla",
+      "email": "karla@help.me",
+      "password": "123123"
+    },
+    {
+      "id": 6,
+      "nome": "Nathalia",
+      "email": "nathalia@help.me",
+      "password": "123123"
+    },
+    {
+      "id": 7,
+      "nome": "Daniel",
+      "email": "daniel@help.me",
+      "password": "123123"
+    },
+    {
+      "id": 8,
+      "nome": "Brenin do grau",
+      "email": "BreninDuGrau@help.me",
+      "password": "123123"
+    },
+    {
+      "id": 9,
+      "nome": "ROBERTO ",
+      "email": "roberto@help.me",
+      "password": "123123"
+    }
+  ],
+  "projetos": [
+    {
+      "descricao": "Projeto Final",
+      "idUsuario": 3,
+      "id": 1
+    },
+    {
+      "descricao": "Projeto do Nei",
+      "idUsuario": 1,
+      "id": 3
+    }
+  ],
+  "tarefas": [
+    {
+      "descricao": "Teste",
+      "concluido": false,
+      "projetoId": 1,
+      "usuarioId": 4,
+      "id": 6
+    },
+    {
+      "descricao": "Teste",
+      "projetoId": 1,
+      "usuarioId": 3,
+      "id": 7,
+      "concluido": true
+    },
+    {
+      "descricao": "Teste",
+      "projetoId": 1,
+      "usuarioId": 9,
+      "id": 8,
+      "concluido": true
+    },
+    {
+      "descricao": "Roberto estudar php",
+      "projetoId": 1,
+      "usuarioId": 9,
+      "id": 9,
+      "concluido": true
+    },
+    {
+      "descricao": "Yjsbsosnsoenosns. Jsisbsis s.  Isbsiebsue",
+      "projetoId": 1,
+      "usuarioId": 3,
+      "id": 10,
+      "concluido": true
+    }
+  ]
+}
