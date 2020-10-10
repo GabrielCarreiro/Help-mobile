@@ -41,4 +41,4 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para
 <a href="https://github.com/KARLA-DINIZ"> Karla Diniz </a> |
 <a href="https://github.com/Neidamazio">Nei Damazio</a> |
 <a href="https://github.com/elviamasiero"> Elvia Goulart </a> |
-<a href="https://github.com/nath-cj"> Natália Carvalho </a> 
+<a href="https://github.com/nath-cj"> Nathália Carvalho </a> 
