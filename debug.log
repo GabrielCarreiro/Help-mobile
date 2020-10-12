@@ -2,3 +2,4 @@
 [1006/152714.330:ERROR:process_info.cc(617)] range at 0x0, size 0x28 fully unreadable
 [1010/194837.298:ERROR:settings.cc(430)] Settings version is not 5
 [1010/195837.454:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)
+[1011/102109.710:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)

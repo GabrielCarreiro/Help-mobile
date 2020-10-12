@@ -1,7 +1,16 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { Text, ScrollView } from 'react-native';
-import { Container, MessageView, MessageText, MessageTextUser, MessageSendView, MessageSendInput, MessagenSendButton } from './styles'
+import { Text, ScrollView, View } from 'react-native';
+import {  Container,
+          MessageView, 
+          MessageText,
+          MessageTextUser, 
+          MessageSendView, 
+          MessageSendInput, 
+          MessagenSendButton,
+          UserName,
+          GetMessage } from './styles'
 import AsyncStorage from '@react-native-community/async-storage';
+import { FontAwesome } from '@expo/vector-icons'; 
 
 import firebase from 'firebase';
 import 'firebase/firestore';
@@ -48,7 +57,7 @@ const Chat = () => {
     loadUserAuth()
   }, [])
 
-  const onTarefasChanged = useCallback(snap => {
+  const onMessageChanged = useCallback(snap => {
     const data = snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
     setAllMessage(data);
@@ -56,22 +65,26 @@ const Chat = () => {
   }, []);
 
   useEffect(() => {
-    const unsubscribe = firebase.firestore().collection('help-chat').onSnapshot(onTarefasChanged);
+    const unsubscribe = firebase.firestore().collection('help-chat').onSnapshot(onMessageChanged);
     return () => unsubscribe();
   }, [])
 
-  console.log(allMessage)
-
-  const handleAddTask = async () => {
+  const sendMessage = async () => {
 
     if (!messageUser) return;
 
+    let date = new Date;
+    let hours = date.getHours()
+    let minutes = date.getMinutes()
+    let time = hours +':'+  minutes
+
     try {
-      await firebase.firestore().collection('help-chat').add({
+        await firebase.firestore().collection('help-chat').add({
         message: messageUser,
         date: new Date,
         user: userAuth.id,
-        name: userAuth.nome
+        name: userAuth.nome,
+        time: time 
       });
       setMessageUser("");
       loadMessage();
@@ -82,17 +95,27 @@ const Chat = () => {
 
 
   const loadAllMessage = useCallback(() => {
-    return allMessage.map(mess => {
+        return allMessage.map(mess => {
       if (mess.user === userAuth.id) {
-        return <MessageTextUser key={mess.id}> {mess.name} {'\n'} {mess.message}</MessageTextUser>
+      return <MessageTextUser key={mess.id}> 
+                  <UserName > {mess.name} </UserName>  
+                  <GetMessage> 
+                    <Text style={{fontSize: 12, color:'#fff'}}>{mess.time}  </Text> 
+                    <Text style={{fontSize: 16, color:'#fff',  textAlign:'right', width:'92%' }}>{mess.message} </Text>
+                  </GetMessage>   
+              </MessageTextUser>
       } else {
-        return <MessageText key={mess.id}> {mess.name} {'\n'} {mess.message} </MessageText>
-      }
-    })
+        return <MessageText key={mess.id}> 
+                  <UserName > {mess.name} </UserName>  
+                  <GetMessage> 
+                    <Text style={{fontSize: 12, color:'#fff'}}>{mess.time}  </Text> 
+                    <Text style={{fontSize: 16, color:'#fff', textAlign:'right', width:100}}>{mess.message} </Text>
+                  </GetMessage>   
+                </MessageText>
+              }
+          })
   }, [allMessage])
 
-
-  console.log(userAuth)
 
   return (
     <>
@@ -109,8 +132,8 @@ const Chat = () => {
             placeholderTextColor="white"
             value={messageUser} onChangeText={text => setMessageUser(text)}>
           </MessageSendInput >
-          <MessagenSendButton onPress={() => handleAddTask()}>
-            <Text style={{ color: "#fff", fontWeight: "bold" }}> Enviar </Text>
+          <MessagenSendButton onPress={() =>  sendMessage()}>
+            <FontAwesome name="location-arrow" size={28} color="black" onPress={() => sendMessage()} style={{transform: [{ rotate: "45deg" }]}} />
           </MessagenSendButton>
         </MessageSendView>
       </Container>
