@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { Text, ScrollView, View } from 'react-native';
+import { Text, ScrollView} from 'react-native';
 import {  Container,
           MessageView, 
           MessageText,
           MessageTextUser, 
           MessageSendView, 
-          MessageSendInput, 
+          MessageSendInput,
+          SendFile, 
           MessagenSendButton,
           UserName,
           GetMessage } from './styles'
@@ -35,6 +36,7 @@ const Chat = () => {
           // console.log(doc.id, '=>', doc.data());
           temp.push({ id: doc.id, ...doc.data() });
         })
+
         temp.sort(ordemDecrescente);
         setAllMessage(temp);
 
@@ -76,6 +78,9 @@ const Chat = () => {
     let date = new Date;
     let hours = date.getHours()
     let minutes = date.getMinutes()
+    if(minutes < 10){
+      minutes = "0" + minutes
+    }
     let time = hours +':'+  minutes
 
     try {
@@ -95,7 +100,7 @@ const Chat = () => {
 
 
   const loadAllMessage = useCallback(() => {
-        return allMessage.map(mess => {
+      return allMessage.map(mess => {
       if (mess.user === userAuth.id) {
       return <MessageTextUser key={mess.id}> 
                   <UserName > {mess.name} </UserName>  
@@ -106,10 +111,10 @@ const Chat = () => {
               </MessageTextUser>
       } else {
         return <MessageText key={mess.id}> 
-                  <UserName > {mess.name} </UserName>  
+                  <UserName style={{ textAlign:'left'}} > {mess.name} </UserName>  
                   <GetMessage> 
-                    <Text style={{fontSize: 12, color:'#fff'}}>{mess.time}  </Text> 
-                    <Text style={{fontSize: 16, color:'#fff', textAlign:'right', width:100}}>{mess.message} </Text>
+                    <Text style={{fontSize: 16, color:'#fff', width:'88%', marginLeft: 3}}>{mess.message} </Text>
+                    <Text style={{fontSize: 12, color:'#fff'}}>{mess.time}  </Text>  
                   </GetMessage>   
                 </MessageText>
               }

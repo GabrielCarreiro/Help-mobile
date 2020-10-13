@@ -12,7 +12,15 @@ export const MessageView = styled.View`
     height: 91%;
 `;
 
-export const MessageText = styled.Text`
+export const MessageText = styled.View`
+    background-color: rgba(239, 80, 40, 131);
+    margin: 10px;
+    padding: 5px;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 8px;
+`;
+export const MessageTextUser = styled.View`
     background-color: rgba(239, 80, 40, 131);
     margin: 10px;
     padding: 5px;
@@ -51,15 +59,6 @@ export const MessagenSendButton = styled.TouchableOpacity`
     border-radius: 50px;
     margin-bottom: 5px;
     margin-left: 5px;
-`;
-
-export const MessageTextUser = styled.View`
-    background-color: rgba(239, 80, 40, 131);
-    margin: 10px;
-    padding: 5px;
-    color: #fff;
-    font-size: 16px;
-    border-radius: 8px;
 `;
 
 export const UserName = styled.Text`

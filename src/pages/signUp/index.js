@@ -49,7 +49,7 @@ const SignUp = ({ navigation: { goBack } }) =>{
 
     return(
         <Container>
-            <Logo source={{uri:"https://i.imgur.com/H9oAf6h.png"}} />
+            <Logo source={require('../../../assets/splash.png')} />
              <Input value={newName} onChangeText={text => setNewName(text)} placeholder="Digite seu nome" />
              <Input value={newEmail} onChangeText={text => setNewEmail(text)} placeholder="Digite seu email"/>
              <Input value={newPassword}  onChangeText={text => setNewPassword(text)} placeholder="Digite sua senha" secureTextEntry={true}/>
