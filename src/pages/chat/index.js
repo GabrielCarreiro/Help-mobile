@@ -101,7 +101,7 @@ const Chat = () => {
                   <UserName > {mess.name} </UserName>  
                   <GetMessage> 
                     <Text style={{fontSize: 12, color:'#fff'}}>{mess.time}  </Text> 
-                    <Text style={{fontSize: 16, color:'#fff',  textAlign:'right', width:'92%' }}>{mess.message} </Text>
+                    <Text style={{fontSize: 16, color:'#fff',  textAlign:'right', width:'88%' }}>{mess.message} </Text>
                   </GetMessage>   
               </MessageTextUser>
       } else {

@@ -3,15 +3,6 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import Project from '../pages/_project'
 import AllTasks  from '../pages/tasks';
 import Chat from '../pages/chat';
-/*  <Auth.Screen name="Tasks" 
-                component={AllTasks } />
-
-                 <Auth.Screen name="Tasks" 
-                component={Tasks} />
-            
-            <Auth.Screen name="Chat" 
-                component={Chat} /> */
-
 const Auth= createMaterialTopTabNavigator();
 
 const AppRoutes = () =>{
